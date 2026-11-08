@@ -55,11 +55,25 @@ After cleaning, the dataset contained **4,204 instances, 57 predictor features a
 
 ## C. GitHub Repository Link
 
-The complete project, including the Jupyter Notebook, dataset files, trained machine learning models, Streamlit application and supporting files, is available in the GitHub repository.
+**GitHub Repository:**  
+https://github.com/Sol-Explorer/spambase-classification
 
-**GitHub Repository:** [Spambase Classification](https://github.com/Sol-Explorer/spambase-classification)
+**Live Streamlit Application:**  
+https://spambase-classificationgit-dyoduxdmdc8tgpdc6zoupc.streamlit.app/
 
-**Live Streamlit Application:** [Spambase Classification App](https://spambase-classificationgit-dyoduxdmdc8tgpdc6zoupc.streamlit.app/)
+### Streamlit Application – Usage Instructions
+
+1. Open the live Streamlit application using the link above.
+2. Upload the test dataset (`test_data.csv`) using the CSV file uploader. The file is available in the root directory of the GitHub repository.
+3. Select one of the five classification models from the dropdown:
+   - Logistic Regression
+   - Decision Tree
+   - KNN
+   - Gaussian Naive Bayes
+   - SVM
+4. View the evaluation results, including Accuracy, ROC-AUC, Precision, Recall, F1 Score, MCC, confusion matrix and classification report.
+
+The application uses the selected pre-trained model and its required preprocessing artifact to generate predictions. It does not retrain the model using the uploaded test data.
 
 ## D. Models Used
 
