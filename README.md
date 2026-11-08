@@ -42,7 +42,7 @@ The 57 predictor features consist of:
 
 During data exploration, duplicate records were identified. Records with identical predictor values and conflicting target labels were excluded, and redundant duplicate records were reduced to one representative record.
 
-After cleaning, the dataset contained **4,204 instances and 57 predictor features**.
+After cleaning, the dataset contained **4,204 instances, 57 predictor features and one target variable**.
 
 **Preprocessing and Data Splitting:**
 
@@ -90,11 +90,11 @@ The performance of each model was evaluated using the following metrics:
 
 ### Observations on Model Performance
 
-| ML Model Name | Observation about model performance |
+| **ML Model Name** | **Observation about model performance** |
 |---|---|
-| Logistic Regression | Achieved good accuracy and a high ROC-AUC score, indicating strong classification performance and ability to distinguish between spam and non-spam emails. |
-| Decision Tree | Achieved accuracy comparable to Logistic Regression, but had a lower ROC-AUC score. |
-| KNN | Delivered good overall performance, although its accuracy and F1 score were slightly lower than Logistic Regression and Decision Tree. |
-| Naive Bayes | Achieved the highest recall, identifying most spam emails, but had lower precision due to more false positives. |
-| Support Vector Machine | Achieved the highest accuracy, ROC-AUC, precision, F1 score and MCC among the five models. |
-| **Overall Winner for the Dataset** | **Support Vector Machine (SVM)** performed best overall across the evaluation metrics. |
+| **Logistic Regression** | Achieved an accuracy of 92.39% and ROC-AUC of 0.9721, indicating strong overall classification performance. Its accuracy was very close to Decision Tree, while its ROC-AUC was considerably higher (0.9721 vs. 0.9186), suggesting better ability to distinguish between spam and non-spam emails across different classification thresholds. It also achieved a higher F1 score than Decision Tree and KNN. |
+| **Decision Tree** | Achieved an accuracy of 92.27%, which was almost identical to Logistic Regression (92.39%). Its precision was slightly higher than Logistic Regression, but its recall and F1 score were marginally lower. However, its ROC-AUC of 0.9186 was the lowest among the five models, indicating comparatively weaker class discrimination across different thresholds. |
+| **K-Nearest Neighbors (KNN)** | Achieved an accuracy of 91.68% and ROC-AUC of 0.9654, showing good classification performance. Its precision was close to Logistic Regression, but its recall was lower (0.8866 vs. 0.9045), meaning it missed more spam emails. Consequently, its F1 score was also slightly lower than Logistic Regression and Decision Tree. |
+| **Gaussian Naive Bayes** | Achieved the highest recall (0.9701) among all five models, identifying 325 out of 335 spam emails. However, its precision was the lowest (0.7035), with 137 non-spam emails incorrectly classified as spam. This indicates that while the model identified most spam emails, it also generated considerably more false positives. Its accuracy and MCC were also the lowest among the models. |
+| **Support Vector Machine (SVM)** | Achieved the highest accuracy (93.10%), ROC-AUC (0.9766), precision (0.9184), F1 score (0.9129) and MCC (0.8559). Compared with Logistic Regression, it achieved improvements across all six metrics, although the differences were relatively small for some metrics. It also produced fewer false positives than the other models, making it the strongest overall performer in this comparison. |
+| **Overall Winner for the Dataset** | **Support Vector Machine (SVM)** performed best overall, achieving the highest scores in five out of six evaluation metrics. Although Gaussian Naive Bayes achieved the highest recall, its lower precision resulted in more false positives. Considering the overall balance of classification performance across the evaluation metrics, SVM was the best-performing model for this dataset. |
